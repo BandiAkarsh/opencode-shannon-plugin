@@ -330,7 +330,7 @@ Call \`shannon_docker_cleanup\` when finished.
 - **Analyze JS bundles**: Use \`shannon_js_analyze\` on every discovered JS bundle — it finds secrets, endpoints, and XSS sinks automatically.
 - **Manage sessions**: Use \`shannon_auth_session\` to create persistent sessions and reuse them across IDOR, injection, and privilege escalation tests.
 - **Test rate limits**: Use \`shannon_rate_limit_test\` to check for missing rate limiting, timing leaks, and race conditions.
-- **Test authorization depth**: After getting one user's session, use `shannon_idor_test` in auto mode to systematically test ALL resource endpoints.
+- **Test authorization depth**: After getting one user's session, use \`shannon_idor_test\` in auto mode to systematically test ALL resource endpoints.
 - **Crack what you find**: If you extract password hashes, use hashcat/john to crack them.
 - **Parse JavaScript sources**: Extract routes, endpoints, and secrets from client-side bundles.
 

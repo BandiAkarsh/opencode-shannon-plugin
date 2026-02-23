@@ -34,7 +34,7 @@ const ShannonPlugin: Plugin = async (ctx: PluginInput) => {
   console.log(pc.green("[ShannonPlugin] Config loaded successfully"))
 
   console.log(pc.cyan("[ShannonPlugin] Registering tools..."))
-  const tools: Record<string, ReturnType<typeof createShannonExec>> = {
+  const tools: Record<string, any> = {
     shannon_exec: createShannonExec(),
     shannon_docker_init: createShannonDockerInit(),
     shannon_docker_cleanup: createShannonDockerCleanup(),

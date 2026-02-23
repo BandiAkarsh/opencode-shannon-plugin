@@ -1,24 +1,27 @@
-import { Tool, ToolExecuteContext, ToolExecuteOutput } from '../../types';
+import { tool, type ToolDefinition } from "@opencode-ai/plugin"
 
-export const shannon_cloud_recon: Tool = {
-  name: 'shannon_cloud_recon',
-  description: 'Scan for cloud-native misconfigurations, CI/CD secrets, and environment metadata leaks.',
-  arguments: {
-    target: {
-      type: 'string',
-      description: 'The target host or repository path to scan.',
-      required: true
+export function createShannonCloudRecon(): ToolDefinition {
+  return tool({
+    description:
+      "Scan for cloud-native misconfigurations, CI/CD secrets, and environment metadata leaks.",
+    args: {
+      _placeholder: tool.schema
+        .boolean()
+        .describe("Placeholder. Always pass true."),
     },
-    type: {
-      type: 'string',
-      description: 'Type of scan: "metadata" (IMDS), "cicd" (.github/workflows), "secrets" (.env/config)',
-      required: true
-    }
-  },
-  execute: async (args: any, context: ToolExecuteContext): Promise<ToolExecuteOutput> => {
-    return {
-      output: `Starting cloud-native recon (${args.type}) on ${args.target}...`,
-      instructions: 'If CI/CD secrets are found, immediately consult Librarian to find remediation steps for that specific platform (GitHub/GitLab/Jenkins).'
-    };
-  }
-};
+    async execute(_args) {
+      return [
+        "## Shannon Cloud Recon",
+        "",
+        "Cloud recon tool is ready.",
+        "Use shannon_exec to run cloud-specific scanning commands manually.",
+        "",
+        "### Suggested Scans",
+        "- IMDS metadata: curl http://169.254.169.254/latest/meta-data/",
+        "- CI/CD secrets: search .github/workflows, .gitlab-ci.yml for hardcoded tokens",
+        "- Environment leaks: check /.env, /config, /actuator/env endpoints",
+        "- If CI/CD secrets are found, consult Librarian for platform-specific remediation.",
+      ].join("\n")
+    },
+  })
+}
