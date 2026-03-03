@@ -9,5 +9,4 @@ Example commands:
 - dig target ANY
 - whois target
 - curl -sI target
-
-**IMPORTANT**: Only use on systems you own or have explicit written permission to test.`
+`

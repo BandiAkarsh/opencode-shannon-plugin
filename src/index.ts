@@ -18,6 +18,11 @@ import { createShannonTlsScan } from "./tools/shannon-tls-scan"
 import { createShannonSubdomainTakeover } from "./tools/shannon-subdomain-takeover"
 import { createShannonHeadersAudit } from "./tools/shannon-headers-audit"
 import { createShannonApiFuzzer } from "./tools/shannon-api-fuzzer"
+import { createShannonReBinary } from "./tools/shannon-re-binary"
+import { createShannonReMobile } from "./tools/shannon-re-mobile"
+import { createShannonReFirmware } from "./tools/shannon-re-firmware"
+import { createShannonReMalware } from "./tools/shannon-re-malware"
+import { createShannonReReport } from "./tools/shannon-re-report"
 import {
   createShannonExec,
   createShannonDockerInit,
@@ -62,6 +67,11 @@ const ShannonPlugin: Plugin = async (ctx: PluginInput) => {
     shannon_subdomain_takeover: createShannonSubdomainTakeover(),
     shannon_headers_audit: createShannonHeadersAudit(),
     shannon_api_fuzzer: createShannonApiFuzzer(),
+    shannon_re_binary: createShannonReBinary(),
+    shannon_re_mobile: createShannonReMobile(),
+    shannon_re_firmware: createShannonReFirmware(),
+    shannon_re_malware: createShannonReMalware(),
+    shannon_re_report: createShannonReReport(),
   }
 
   if (config.shannon.browser_testing !== false) {
@@ -74,6 +84,14 @@ const ShannonPlugin: Plugin = async (ctx: PluginInput) => {
 
   if (config.shannon.upload_testing !== false) {
     tools.shannon_upload_test = createShannonUploadTest()
+  }
+
+  if (config.shannon.re_testing !== false) {
+    tools.shannon_re_binary = createShannonReBinary()
+    tools.shannon_re_mobile = createShannonReMobile()
+    tools.shannon_re_firmware = createShannonReFirmware()
+    tools.shannon_re_malware = createShannonReMalware()
+    tools.shannon_re_report = createShannonReReport()
   }
 
   console.log(pc.cyan("[ShannonPlugin] Registering hooks..."))

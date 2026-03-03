@@ -12,6 +12,8 @@ export const ShannonConfigSchema = z.object({
       browser_testing: z.boolean().default(true).describe("Enable Playwright browser-based testing for SPAs"),
       idor_testing: z.boolean().default(true).describe("Enable systematic IDOR testing across endpoints"),
       upload_testing: z.boolean().default(true).describe("Enable file upload vulnerability testing (XXE, YAML, polyglot)"),
+      re_testing: z.boolean().default(true).describe("Enable reverse engineering tools (binary, mobile, firmware, malware analysis)"),
+      re_docker_image: z.string().default("shannon-re-tools").describe("Docker image for reverse engineering tools"),
     })
     .optional()
     .default({
@@ -24,6 +26,8 @@ export const ShannonConfigSchema = z.object({
       browser_testing: true,
       idor_testing: true,
       upload_testing: true,
+      re_testing: true,
+      re_docker_image: "shannon-re-tools",
     }),
 
   disabled_hooks: z.array(z.string()).optional().default([]).describe("List of hook names to disable"),
