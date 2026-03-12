@@ -59,3 +59,9 @@ PROJECT_STATUS.md
 dvwa-pentest-report.md
 pentest-report-juice-shop.md
 pentest-report-juice-shop-v2.md
+
+# Large binary tools - should be downloaded during Docker build
+tools/
+jadx/
+Il2CppDumper/
+*.sh
