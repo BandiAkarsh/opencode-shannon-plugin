@@ -3,17 +3,31 @@
 **AI-powered autonomous penetration testing for [OpenCode](https://github.com/sst/opencode).**
 
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](LICENSE)
-[![GitHub Release](https://img.shields.io/github/v/release/vichhka-git/opencode-shannon-plugin?color=369eff&labelColor=black&logo=github&style=flat-square)](https://github.com/vichhka-git/opencode-shannon-plugin/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/BandiAkarsh/opencode-shannon-plugin?color=369eff&labelColor=black&logo=github&style=flat-square)](https://github.com/BandiAkarsh/opencode-shannon-plugin/releases)
 
-> Based on [Shannon](https://github.com/KeygraphHQ/shannon) by KeygraphHQ (96.15% success on XBOW benchmark).
-> Shannon operates like a senior human penetration tester — intelligent, adaptive, and capable of executing complex multi-stage attack chains.
+> This is a standalone version of [Shannon](https://github.com/KeygraphHQ/shannon) by KeygraphHQ, enhanced with additional reverse engineering tools.
+> Maintained by [BandiAkarsh](https://github.com/BandiAkarsh)
+
+---
+
+## About This Fork
+
+This is a standalone variation of the original [Shannon](https://github.com/KeygraphHQ/shannon) autonomous pentesting framework. Key enhancements:
+
+- **Enhanced Reverse Engineering Tools**: Pre-installed jadx, ghidra, frida, imhex, wireshark
+- **APK Patching**: LSPatch for Xposed module embedding without root
+- **Unity IL2CPP Support**: Il2CppDumper for game modding
+- **Full Authorization**: All tools enabled without restrictions
+- **Up-to-date**: Latest Kali tools and security utilities
 
 ---
 
 ## What It Does
 
 - **600+ Kali Linux tools** running in Docker (nmap, sqlmap, nikto, gobuster, hydra, nuclei, gowitness, BrowserBruter, and more)
+- **Advanced RE Tools**: jadx, ghidra, frida, imhex, wireshark, rizin, radare2, binwalk, yara
 - **Browser automation** via Playwright for testing JavaScript SPAs (React, Angular, Vue)
+- **Full Authorization**: All tools fully enabled - no restrictions
 - **6 pentest phases**: Recon → Vuln Discovery → Browser Testing → IDOR/Upload Testing → Exploitation → Reporting
 - **Provider agnostic**: Works with Anthropic, OpenAI, Google Gemini, GitHub Copilot, Azure, Groq, DeepSeek, xAI
 - **Professional reports** with CVE references, CVSS scores, and remediation guidance
@@ -28,7 +42,7 @@ Copy and paste this prompt to your LLM agent (Claude Code, AmpCode, Cursor, etc.
 
 ```
 Install and configure opencode-shannon-plugin by following the instructions here:
-https://raw.githubusercontent.com/vichhka-git/opencode-shannon-plugin/refs/heads/main/docs/guide/installation.md
+https://raw.githubusercontent.com/BandiAkarsh/opencode-shannon-plugin/refs/heads/main/docs/guide/installation.md
 ```
 
 Or install manually — but **we recommend letting an agent handle it.**
@@ -38,13 +52,13 @@ Or install manually — but **we recommend letting an agent handle it.**
 Fetch the installation guide and follow it:
 
 ```bash
-curl -s https://raw.githubusercontent.com/vichhka-git/opencode-shannon-plugin/refs/heads/main/docs/guide/installation.md
+curl -s https://raw.githubusercontent.com/BandiAkarsh/opencode-shannon-plugin/refs/heads/main/docs/guide/installation.md
 ```
 
 ### Manual Install
 
 ```bash
-git clone https://github.com/vichhka-git/opencode-shannon-plugin
+git clone https://github.com/BandiAkarsh/opencode-shannon-plugin
 cd opencode-shannon-plugin
 bun install && bun run build
 docker build -t shannon-tools .
@@ -297,7 +311,7 @@ Shannon + Oh-My-OpenCode = AI Penetration Testing Team
 bun add -g oh-my-opencode
 
 # Then install Shannon plugin
-git clone https://github.com/vichhka-git/opencode-shannon-plugin
+git clone https://github.com/BandiAkarsh/opencode-shannon-plugin
 cd opencode-shannon-plugin
 bun install && bun run build
 docker build -t shannon-tools .

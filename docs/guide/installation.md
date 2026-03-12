@@ -9,7 +9,7 @@
 ## Step 1: Install the Plugin
 
 ```bash
-git clone https://github.com/vichhka-git/opencode-shannon-plugin
+git clone https://github.com/BandiAkarsh/opencode-shannon-plugin
 cd opencode-shannon-plugin
 bun install
 bun run build

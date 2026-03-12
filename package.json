@@ -1,7 +1,7 @@
 {
   "name": "opencode-shannon-plugin",
-  "version": "0.3.0",
-  "description": "Native OpenCode plugin for Shannon autonomous pentesting",
+  "version": "0.4.0",
+  "description": "AI-powered autonomous penetration testing plugin for OpenCode - standalone version with enhanced RE tools",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
@@ -31,16 +31,16 @@
     "security",
     "autonomous-agent"
   ],
-  "author": "vichhka-git",
+  "author": "BandiAkarsh",
   "license": "AGPL-3.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vichhka-git/opencode-shannon-plugin.git"
+    "url": "git+https://github.com/BandiAkarsh/opencode-shannon-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/vichhka-git/opencode-shannon-plugin/issues"
+    "url": "https://github.com/BandiAkarsh/opencode-shannon-plugin/issues"
   },
-  "homepage": "https://github.com/vichhka-git/opencode-shannon-plugin#readme",
+  "homepage": "https://github.com/BandiAkarsh/opencode-shannon-plugin#readme",
   "dependencies": {
     "@opencode-ai/plugin": "^1.1.19",
     "js-yaml": "^4.1.1",
